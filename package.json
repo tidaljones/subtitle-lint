@@ -1,0 +1,17 @@
+{
+  "name": "subtitle-lint",
+  "version": "0.1.0",
+  "description": "Parse SRT subtitle files and check them for timing and readability problems",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
