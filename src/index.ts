@@ -1,5 +1,6 @@
 export type { Cue, Issue, Severity } from './types'
 export { parseSrt, formatTimestamp } from './srt'
+export { parseVtt } from './vtt'
 export { lint } from './lint'
 export type { LintOptions } from './lint'
 export { formatIssues } from './format'

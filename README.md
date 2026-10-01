@@ -60,6 +60,20 @@ data, and rendering is a separate, swappable step. A CLI wrapper around
 this library gets its own `--json` flag almost for free by passing that
 flag straight through.
 
+## WebVTT
+
+`parseVtt()` takes a `.vtt` file and returns the same `Cue[]` as
+`parseSrt()`, so `lint()` and `formatIssues()` work on either format.
+Header, `NOTE`, `STYLE` and `REGION` blocks are skipped. Cue settings
+(`align:start`, `position:10%`) are dropped since `Cue` has no field for
+them. Timestamps may omit the hours (`01:02.345`).
+
+```ts
+import { parseVtt, lint } from 'subtitle-lint'
+
+const issues = lint(parseVtt(vttText))
+```
+
 ## What gets checked
 
 - `empty-text` - a cue with no visible text (error)
